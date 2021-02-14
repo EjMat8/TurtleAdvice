@@ -1,0 +1,61 @@
+/*
+COLORS:
+
+--color-primary: #F1C40F ;
+--color-primary-light:#FFCF0F;
+--color-primary-dark: #D9B00D;
+
+
+*/
+:root {
+  --color-primary: #f1c40f;
+  --color-primary-light: #ffcf0f;
+  --color-primary-dark: #d9b00d;
+
+  --grey-light-1: #f8f8f8;
+  --grey-light-2: #f0f0f0;
+  --grey-light-3: #e9e9e9;
+
+  --grad-1: linear-gradient(
+    to right bottom,
+    var(--color-primary-light) 80%,
+    var(--color-primary-dark)
+  );
+}
+@mixin center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  color: var(--grey-light-1);
+
+  line-height: 1.6;
+  font-weight: 500;
+  font-family: "Baloo Da 2", cursive;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
