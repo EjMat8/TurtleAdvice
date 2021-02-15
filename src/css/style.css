@@ -42,8 +42,7 @@ body {
 
 .hidden {
   opacity: 0;
-  visibility: hidden;
-  display: none; }
+  visibility: hidden; }
 
 .form {
   display: flex;
@@ -93,6 +92,8 @@ body {
       .form__button--home .form__icon {
         height: 3rem;
         width: 3rem; }
+      .form__button--home:focus {
+        outline: none; }
       .form__button--home:hover {
         border-bottom: 3px solid var(--color-primary); }
     .form__button:focus {
@@ -193,7 +194,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark)); }
+  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+  transition: all 0.5s; }
   .header__box {
     position: absolute;
     top: 40%;
@@ -201,19 +203,19 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
   .header__title {
-    font-size: 8.5rem;
+    font-size: 8rem;
     font-weight: 400;
     margin-bottom: -2.5rem;
     text-transform: uppercase; }
   .header__caption {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem; }
 
 .results {
-  margin: 4rem 4rem;
-  max-width: 130rem;
+  padding: 4rem;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%; }
+  width: 100%;
+  transition: all 0.5s; }

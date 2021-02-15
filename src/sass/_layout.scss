@@ -14,29 +14,32 @@
     var(--color-primary-light),
     var(--color-primary-dark)
   );
+  transition: all 0.5s;
   &__box {
     @include center;
     text-align: center;
   }
   &__title {
-    font-size: 8.5rem;
+    font-size: 8rem;
     font-weight: 400;
     margin-bottom: -2.5rem;
     text-transform: uppercase;
   }
   &__caption {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
 }
 
 .results {
   //   background-color: orange;
-  margin: 4rem 4rem;
-  max-width: 130rem;
+  // margin: 4rem 4rem;
+  padding: 4rem;
+  // max-width: 130rem;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
+  transition: all 0.5s;
 }

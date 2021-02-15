@@ -59,6 +59,9 @@
         height: 3rem;
         width: 3rem;
       }
+      &:focus {
+        outline: none;
+      }
       &:hover {
         border-bottom: 3px solid var(--color-primary);
       }

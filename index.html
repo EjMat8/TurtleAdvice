@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/css/style.css" />
+    <script defer src="./src/js/controller.js"></script>
 
     <title>Turtle-Advice</title>
   </head>
@@ -24,7 +25,7 @@
             <input
               type="text"
               class="form__input form__input--home"
-              placeholder="Whatcha need advice for?"
+              placeholder="Whatcha need advice for? Just a word would be fine :)"
             />
             <button class="form__button">
               <svg class="form__icon form__icon--home">
@@ -40,7 +41,7 @@
           <input
             type="text"
             class="form__input form__input--query"
-            placeholder="Whatcha need advice for?"
+            placeholder="Whatcha need advice for? Just a word would be fine :)"
           />
           <button class="form__button">
             <svg class="form__icon form__icon--query">
@@ -54,7 +55,7 @@
           </button>
         </form>
         <div class="content">
-          <!-- <ul class="query-list hidden">
+          <ul class="query-list">
             <li class="query-list__item">
               <a href="#" class="query-list__link"
                 >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -80,14 +81,14 @@
                 Voluptate nulla nostrum est, incidunt quo</a
               >
             </li>
-          </ul> -->
-          <div class="advice-box">
+          </ul>
+          <!-- <div class="advice-box">
             <p class="advice-box__advice">
               A common regret in life is wishing one hadn't worked so hard
             </p>
             <button class="btn-inline">COPY</button>
-          </div>
-          <div class="pagination hidden">
+          </div> -->
+          <div class="pagination">
             <button class="pagination__button pagination__button--left">
               &larr; Page N
             </button>
