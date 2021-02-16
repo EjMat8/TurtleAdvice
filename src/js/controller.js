@@ -26,6 +26,7 @@ const controlSearch = async function (view = "header") {
       headerView.hide();
       mainView.show();
     }
+    mainView.clearError();
     mainView.renderSpinner();
     await model.loadSearchResults(query);
     mainView.clearSpinner();

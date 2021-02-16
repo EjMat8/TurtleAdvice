@@ -15,7 +15,9 @@ export class CommonView {
   _clear() {
     this._parentEl.querySelector(".form__input").value = "";
   }
-
+  clearError() {
+    this._errorEl.innerHTML = "";
+  }
   renderError() {
     const markup = `<p class="error">
       Sadly, I could not find what you were looking for :(
