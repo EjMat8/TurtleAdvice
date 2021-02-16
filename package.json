@@ -7,7 +7,7 @@
     "devserver": "live-server",
     "watch:sass": "node-sass src/sass/main.scss src/css/style.css -w",
     "start": "parcel index.html",
-    "build": "parcel build index.htm --dist-dir ./dist",
+    "build": "parcel build index.html --dist-dir ./dist",
     "start:live": "npm-run-all --parallel start watch:sass",
     "compile:sass": "node-sass src/sass/main.scss src/css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" src/css/style.comp.css -o src/css/style.prefix.css",
