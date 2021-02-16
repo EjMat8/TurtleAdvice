@@ -98,9 +98,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+
   padding: 6rem 4rem 2rem 4rem;
   list-style: none;
-  font-size: 5rem;
+  font-size: 3rem;
 
   &__item {
     flex: 0 0 30%;
@@ -108,7 +109,7 @@
     border: 2px solid var(--color-primary);
     border-radius: 10px;
     margin-bottom: 3.5rem;
-    padding: 5rem;
+    padding: 7rem 4rem;
     color: var(--color-primary);
     white-space: nowrap;
     text-overflow: ellipsis;
