@@ -178,7 +178,7 @@ body {
 
 .advice-box {
   text-align: center;
-  padding: 9rem; }
+  padding: 5rem; }
   .advice-box__advice {
     text-transform: uppercase;
     font-style: italic;
@@ -232,7 +232,7 @@ body {
     text-align: center;
     width: 60%; }
   .header__title {
-    font-size: 7.2rem;
+    font-size: 6.8rem;
     font-weight: 400;
     margin-bottom: -1rem;
     text-transform: uppercase; }
