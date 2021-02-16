@@ -7,7 +7,10 @@ export const state = {
     results: [],
     totalRes: 0,
     query: "",
+    page: 1,
+    resultsPerPage: 6,
   },
+  selectedAdvice: "",
 };
 
 export const loadRandomAdvice = async function () {
@@ -43,6 +46,18 @@ export const loadSearchResults = async function (query) {
   }
 };
 
+export const searchResultsPage = function (page = state.search.page) {
+  state.search.page = page;
+  const start = (page - 1) * state.search.resultsPerPage;
+  const end = page * state.search.resultsPerPage;
+  return state.search.results.slice(start, end);
+};
+export const loadSelectedAdvice = function (id) {
+  const selectedAdvice = state.search.results.find((ad) => ad.id === +id);
+  console.log(selectedAdvice);
+  state.selectedAdvice = selectedAdvice.adviceRes;
+};
+// https://api.adviceslip.com/advice/{slip_id}
 // query: "life"
 // slips: (11) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
 // total_results: "11"

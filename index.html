@@ -19,7 +19,7 @@
       <header class="header">
         <div class="header__box">
           <h1 class="header__title">A Turtle's Advice</h1>
-          <p class="header__caption">random advice</p>
+          <p class="header__caption">random advice generating...</p>
 
           <form action="#" class="form">
             <input
@@ -38,6 +38,11 @@
 
       <main class="results hidden">
         <form action="#" class="form">
+          <button class="form__button form__button--back hidden">
+            <svg class="form__icon form__icon--back">
+              <use href="src/img/sprite.svg#icon-arrow-bold-left"></use>
+            </svg>
+          </button>
           <input
             type="text"
             class="form__input form__input--query"
@@ -54,9 +59,14 @@
             </svg>
           </button>
         </form>
+        <!-- <div class="spinner">
+          <svg class="spinner__icon">
+            <use href="src/img/sprite.svg#icon-spinner9"></use>
+          </svg>
+        </div> -->
         <div class="content">
           <ul class="query-list">
-            <li class="query-list__item">
+            <!-- <li class="query-list__item">
               <a href="#" class="query-list__link"
                 >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Beatae officia necessitatibus rem labo!</a
@@ -80,21 +90,22 @@
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Voluptate nulla nostrum est, incidunt quo</a
               >
-            </li>
+            </li> -->
           </ul>
-          <!-- <div class="advice-box">
-            <p class="advice-box__advice">
-              A common regret in life is wishing one hadn't worked so hard
-            </p>
-            <button class="btn-inline">COPY</button>
-          </div> -->
+
           <div class="pagination">
-            <button class="pagination__button pagination__button--left">
+            <!-- <button class="pagination__button pagination__button--left">
               &larr; Page N
             </button>
             <button class="pagination__button pagination__button--right">
               Page N &rarr;
-            </button>
+            </button> -->
+          </div>
+          <div class="advice-box">
+            <!-- <p class="advice-box__advice">
+              A common regret in life is wishing one hadn't worked so hard
+            </p>
+            <button class="btn-inline">COPY</button> -->
           </div>
         </div>
       </main>

@@ -16,6 +16,7 @@
 
 import * as model from "./model.js";
 import headerView from "./View/headerView.js";
+import mainView from "./View/mainView.js";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
@@ -29,13 +30,35 @@ const controlOnLoadCaption = async function () {
   }
 };
 
-const controlSearchRes = async function () {
+const controlSearch = async function (view = "header") {
   try {
-    const query = headerView.getQuery();
+    const query = view === "main" ? mainView.getQuery() : headerView.getQuery();
     if (!query) return;
 
+    history.replaceState(null, null, " ");
+
+    if (view === "header") {
+      headerView.hide();
+      mainView.show();
+    }
+    mainView.renderSpinner();
     await model.loadSearchResults(query);
+    mainView.clearSpinner();
+    mainView.renderResults(model.searchResultsPage());
+
     console.log(model.state.search);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const controlAdvice = async function () {
+  try {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    model.loadSelectedAdvice(id);
+
+    mainView.renderAdvice(model.state);
   } catch (err) {
     console.error(err);
   }
@@ -43,7 +66,9 @@ const controlSearchRes = async function () {
 
 const init = function () {
   controlOnLoadCaption();
-  headerView.addHandlerSearch(controlSearchRes);
+  headerView.addHandlerSearchHome(controlSearch);
+  mainView.addHandlerRender(controlAdvice);
+  mainView.addHandlerSearchMain(controlSearch);
 };
 
 init();

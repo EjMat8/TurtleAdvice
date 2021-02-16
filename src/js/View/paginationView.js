@@ -1,0 +1,3 @@
+// class PaginationView {
+//     _parentEl
+// }
