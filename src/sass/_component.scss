@@ -97,7 +97,7 @@
   height: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 6rem 4rem 2rem 4rem;
   list-style: none;
   font-size: 5rem;
@@ -146,6 +146,9 @@
       background-color: transparent;
       border: 2px solid var(--color-primary-light);
       color: #7a7a7a;
+    }
+    &:focus {
+      outline: none;
     }
   }
 }
@@ -217,4 +220,12 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+////////////////////
+// ERROR
+.error {
+  margin-top: -5rem;
+  color: #292194;
+  font-size: 2rem;
 }

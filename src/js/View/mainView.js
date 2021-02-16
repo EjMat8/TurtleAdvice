@@ -1,6 +1,7 @@
 import { mark } from "regenerator-runtime";
 import { CommonView } from "./commonView.js";
 import headerView from "./headerView.js";
+import paginationView from "./paginationView.js";
 import icons from "url:../../img/sprite.svg";
 
 class MainView extends CommonView {
@@ -10,6 +11,7 @@ class MainView extends CommonView {
     this._data = data;
     const markup = this._generateResultsMarkup();
     if (!markup) return;
+    this._parentEl.querySelector(".query-list").innerHTML = "";
     this._parentEl.querySelector(".advice-box").innerHTML = "";
     this._parentEl.querySelector(".form__button--back").classList.add("hidden");
 
@@ -22,7 +24,9 @@ class MainView extends CommonView {
   _homeCallBack(e) {
     // e.preventDefault();
     if (!e.target.closest(".form__button--home")) return;
+
     this.hide();
+    this.clearContent();
     headerView.show();
   }
 
@@ -37,9 +41,7 @@ class MainView extends CommonView {
     this._adData = data;
     const markup = this._generateAdviceMarkup();
     if (!markup) return;
-    this._parentEl.querySelector(".query-list").innerHTML = "";
-    this._parentEl.querySelector(".pagination").innerHTML = "";
-    this._parentEl.querySelector(".advice-box").innerHTML = "";
+    this.clearContent();
     this._parentEl
       .querySelector(".form__button--back")
       .classList.remove("hidden");
@@ -47,10 +49,6 @@ class MainView extends CommonView {
     this._parentEl
       .querySelector(".advice-box")
       .insertAdjacentHTML("afterbegin", markup);
-
-    this._parentEl
-      .querySelector(".form__button--back")
-      .addEventListener("click", this.renderResults.bind(this, this._data));
   }
 
   addHandlerSearchMain(handler) {
@@ -60,6 +58,14 @@ class MainView extends CommonView {
         e.preventDefault();
         handler("main");
       });
+  }
+
+  addHandlerBack(handler) {
+    this._parentEl.addEventListener("click", function (e) {
+      if (!e.target.closest(".form__button--back")) return;
+
+      handler();
+    });
   }
   renderSpinner() {
     this._parentEl.querySelector(".query-list").innerHTML = "";
@@ -74,6 +80,11 @@ class MainView extends CommonView {
   }
   clearSpinner() {
     this._parentEl.querySelector(".spinner").remove();
+  }
+  clearContent() {
+    this._parentEl.querySelector(".query-list").innerHTML = "";
+    this._parentEl.querySelector(".pagination").innerHTML = "";
+    this._parentEl.querySelector(".advice-box").innerHTML = "";
   }
 
   _generateAdviceMarkup() {

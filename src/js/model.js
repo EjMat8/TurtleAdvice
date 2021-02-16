@@ -30,7 +30,7 @@ export const loadSearchResults = async function (query) {
     state.search.query = query;
     const searchURL = `${API_URL}/search/${query}`;
     const data = await getData(searchURL);
-    console.log(data);
+    // console.log(data);
 
     if (!data.slips) throw new Error(`${data.message.text}`);
 
@@ -42,7 +42,7 @@ export const loadSearchResults = async function (query) {
     });
     state.search.totalRes = data.total_results;
   } catch (err) {
-    console.error(err);
+    throw err;
   }
 };
 
