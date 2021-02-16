@@ -234,7 +234,7 @@ body {
   .header__title {
     font-size: 7.2rem;
     font-weight: 400;
-    margin-bottom: -2.5rem;
+    margin-bottom: -0.5rem;
     text-transform: uppercase; }
   .header__caption {
     font-size: 2.5rem;
