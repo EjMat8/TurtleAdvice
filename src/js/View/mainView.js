@@ -1,7 +1,6 @@
-import { mark } from "regenerator-runtime";
 import { CommonView } from "./commonView.js";
 import headerView from "./headerView.js";
-import paginationView from "./paginationView.js";
+
 import icons from "url:../../img/sprite.svg";
 
 class MainView extends CommonView {

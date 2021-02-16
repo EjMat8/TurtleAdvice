@@ -1,5 +1,3 @@
-import { mark } from "regenerator-runtime";
-
 export class CommonView {
   _errorEl = document.querySelector(".advice-box");
   show() {
