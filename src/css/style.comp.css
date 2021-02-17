@@ -82,7 +82,7 @@ body {
       font-weight: 400; }
       @media only screen and (max-width: 37.5em) {
         .form__input::-webkit-input-placeholder {
-          font-size: 1.3rem; } }
+          font-size: 1.2rem; } }
     .form__input:focus {
       outline: none;
       transform: translateY(-1rem);
