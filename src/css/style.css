@@ -110,6 +110,9 @@ body {
       border-bottom: transparent;
       cursor: pointer;
       transition: border-bottom 0.4s; }
+      @media only screen and (max-width: 37.5em) {
+        .form__button--home {
+          margin-left: 2.3rem; } }
       .form__button--home .form__icon {
         height: 3rem;
         width: 3rem; }
@@ -285,7 +288,7 @@ body {
         width: 85%; } }
     @media only screen and (max-width: 37.5em) {
       .header__box {
-        width: 100%; } }
+        width: 90%; } }
   .header__title {
     font-size: 6.8rem;
     font-weight: 400;
